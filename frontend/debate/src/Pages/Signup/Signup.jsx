@@ -20,7 +20,7 @@ import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
     const navigate = useNavigate()
-    const [remember,setRemember] = useState(false)
+    const [remember, setRemember] = useState(false)
     const boxstyle = {
         position: 'absolute',
         top: '50%',
@@ -32,7 +32,7 @@ function SignUp() {
         boxShadow: 24,
     };
     const center = {
-        position:'relative',
+        position: 'relative',
         top: '50%',
         left: '37%',
     };
@@ -66,19 +66,124 @@ function SignUp() {
                         }}>
                             <ThemeProvider theme={darktheme}>
                                 <Container>
-                                    <Box height={35} />
-                                    <Stack direction='row'>
-                                        <Grid>
-                                        <TextField
+                                    <Box height={20} />
+                                    <Box sx={center}>
+                                        <Avatar sx={{
+                                            ml: '35px',
+                                            mb: '4px',
+                                            bgcolor: '#ffffff',
+                                        }}>
+                                            <LockOutlinedIcon />
+                                        </Avatar>
+                                        <Typography component='h1' variant='h4' sx={{ color: '#ffffff', }}>
+                                            Sign Up
+                                        </Typography>
+                                    </Box>
+                                    <Box height={20} />
+                                    <Stack direction='row' sx={{
+                                        display: 'flex',
+                                        justifyContent: 'space-evenly'
+                                    }}>
+                                        <Grid sx={{
+                                            ml: '10px',
+                                            mr: '30px',
+                                        }}>
+                                            <TextField
                                                 required
-                                                id="email"
-                                                label='Username'
-                                                name='email'
-                                                autoComplete='email'
+                                                id="firstname"
+                                                label='First Name'
+                                                name='firstname'
+                                                autoComplete='firstname'
+                                            />
+                                        </Grid>
+                                        <Grid sx={{
+                                            mr: '30px',
+                                            ml: '30px',
+                                        }}>
+                                            <TextField
+                                                required
+                                                id="lastname"
+                                                label='Last Name'
+                                                name='lastname'
+                                                autoComplete='lastname'
                                             />
                                         </Grid>
                                         <Grid></Grid>
                                     </Stack>
+                                    <Box height={20} />
+                                    <Grid item xs={12} sx={{ ml: '1em', mr: '3em' }}>
+                                        <TextField
+                                            required
+                                            fullWidth
+                                            id="username"
+                                            label='Username'
+                                            name='username'
+                                            autoComplete='username'
+                                        />
+                                    </Grid>
+                                    <Box height={20} />
+                                    <Grid item xs={12} sx={{ ml: '1em', mr: '3em' }}>
+                                        <TextField
+                                            required
+                                            fullWidth
+                                            id="email"
+                                            type='email'
+                                            label='Email'
+                                            name='email'
+                                            autoComplete='email'
+                                        />
+                                    </Grid>
+                                    <Box height={20} />
+                                    <Stack direction='row' sx={{
+                                        display: 'flex',
+                                        justifyContent: 'space-evenly'
+                                    }}>
+                                        <Grid sx={{
+                                            ml: '10px',
+                                            mr: '30px',
+                                        }}>
+                                            <TextField
+                                                required
+                                                id="password"
+                                                type='password'
+                                                label='Password'
+                                                name='pass1'
+                                                autoComplete='password'
+                                            />
+                                        </Grid>
+                                        <Grid sx={{
+                                            mr: '30px',
+                                            ml: '30px',
+                                        }}>
+                                            <TextField
+                                                required
+                                                id="confirm_pass"
+                                                label='Confirm Password'
+                                                type='password'
+                                                name='pass2'
+                                                autoComplete='confirm_pass'
+                                            />
+                                        </Grid>
+                                    </Stack>
+                                    <Box height={20} />
+                                    <Grid item xs={12} sx={{ ml: '3em', mr: '3em', textAlign:'center'}}>
+                                        <Button
+                                            type='submit'
+                                            fullWidth
+                                            variant='contained'
+                                            size='medium'
+                                            sx={{
+                                                ml:'10px',
+                                                mr:'20px',
+                                                borderRadius: 28,
+                                                color: '#ffffff',
+                                                minWidth: '170px',
+                                                backgroundColor: '#ff9a01',
+                                            }}
+                                        >
+                                            Register
+                                        </Button>
+                                    </Grid>
                                 </Container>
                             </ThemeProvider>
                         </Box>
