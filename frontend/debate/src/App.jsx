@@ -1,12 +1,22 @@
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+import React from 'react';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
+import Home from './Pages/Home/Home';
+import Login from './Pages/Login/Login';
+import Signup from './Pages/Signup/Signup';
+import './App.css'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <p>Hello World</p>
-    </div>
-  );
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact element={<Home/>}></Route>
+          <Route path="/login" exact element={<Login/>}></Route>
+          <Route path="/signup" exact element={<Signup/>}></Route>
+          <Route path="/reset-password" exact element={<ForgotPassword/>}></Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  )
 }
-
-export default App;
